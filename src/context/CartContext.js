@@ -15,23 +15,7 @@ export const CartContextProvider = ({children}) => {
             modifiedCart[prodIndex].cant += quantity;
             setCart(modifiedCart);
         }
-    }; 
-    // const addProductCart = (item, quantity) => {
-    //     if (isInCart(item.id)) {
-    //         const updateCart = [...cart];
-    //         updateCart.forEach(e => {
-    //             if (e.item.id === item.id) {
-    //                 e.quantity += quantity
-    //             }
-    //         });
-    //         setCart(updateCart)
-    //     } else {
-    //         setCart([...cart, {item, quantity}])
-    //     }
-    // }
-    // const isInCart = (id) => {
-    //     return cart.find(e => e.item.id === id)
-    // }
+    };
     // const addProductCart = (item, quantity) => {
     //     const index = cart.findIndex(e => e.item.id === item.id)
     //     if (index > -1) {
@@ -54,7 +38,8 @@ export const CartContextProvider = ({children}) => {
         return cart.reduce((acum, value) => (acum + (value.quantity * value.item.price)), 0);
     }
     const totalInstallmentCart = () => {
-        return totalPriceCart() / 6;
+        const totalPrice = totalPriceCart() / 6;
+        return totalPrice.toFixed(2);
     }
     return (
         <CartContext.Provider value={{cart, addProductCart, iconCart, removeItemCart, deleteCart, totalPriceCart, totalInstallmentCart}}>

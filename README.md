@@ -12,45 +12,50 @@ Desarrollar una aplicación e-commerce funcional para el curso de ReactJs de Cod
 
 ## Construido con
 
--ReactJs
+- ReactJs
 
--JavaScript
+- JavaScript
 
--CSS
+- Sass/CSS
 
 ## Librerías
 
--Bootstrap: me facilitó bastante asignar los estilos y poder hacerlo responsive.
+- Bootstrap: facilidad para asignar estilos y obtener un diseño responsive.
 
--React Icons: para importar iconos en general.
+- React Bootstrap: importé componentes Spinner.
 
--React Bootstrap: importé componente Spinner.
+- React Icons: importé íconos en general.
 
-## Versionado
+- React Router Dom: enrutado de la aplicación.
 
--GitHub
+- Firebase: servicios y base de datos (desde donde puedo trabajar con la información de los productos y generar órdenes de compra).
 
 ## Dependencias
     "bootstrap": "^5.1.0",
+    "firebase": "^8.9.1",
     "react-bootstrap": "^2.0.0-beta.6",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.3.0",
 
+## Versionado
+
+- GitHub
+
 ## Instrucciones de instalación y configuración
 
-Clona este repositorio. Necesitas `node` y `npm` instalados globalmente en tu máquina.
+1. Clona este repositorio con `git clone https://github.com/ConstanzaPugliese/vinoteca.git`
 
-Instalación: `npm install`
+2. Necesitas `node` y `npm` instalados globalmente en tu máquina. Desde la carpeta del ahora repositorio local, instala node_modules con `npm install`
 
-Para ejecutar Test Suite: `npm test`
+3. Para ejecutar Test Suite: `npm test`
 
-Para iniciar el servidor `npm start`
+4. Inicializa la aplicación con `npm start`
 
-Para visitar la aplicación en el navegador: http://localhost:3000
+5. Visita la aplicación en el navegador con el link http://localhost:3000
 
 ## Autor
 
 Constanza Pugliese
 
--LinkedIn: https://www.linkedin.com/in/constanza-pugliese-aa90a084/
+- LinkedIn: https://www.linkedin.com/in/constanza-pugliese-aa90a084/

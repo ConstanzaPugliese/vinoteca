@@ -21,24 +21,26 @@ function ItemDetailContainer() {
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        // const dataBase = getFirestore()
-        // dataBase.collection('products').doc('').get()
-        // .then(response => {
-        //     if(response.exists){
-        //         setProduct({id: response.id, ...response.data()})
-        //     }
-        // })
-        // .catch(err => console.log(err))
-        // .finally(() => setLoading(false))
-        let getItem = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                products ? resolve(products) : reject('error 404');
-            }, 2000);
-        });
-        getItem.then(answer => {
-            setProduct(answer[id -1])
-            setLoading(false)
+        setLoading(true);
+        const dataBase = getFirestore()
+        const productsCollection = dataBase.collection('products')
+        const item = productsCollection.doc(id)
+        item.get().then(response => {
+            if(response.exists){
+                setProduct({id: response.id, ...response.data()})
+            }
         })
+        .catch(err => {console.log('Error buscando producto', err)})
+        .finally(() => {setLoading(false)})
+        // let getItem = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         products ? resolve(products) : reject('error 404');
+        //     }, 2000);
+        // });
+        // getItem.then(answer => {
+        //     setProduct(answer[id -1])
+        //     setLoading(false)
+        // })
     }, [id]);
     return (
         <>
