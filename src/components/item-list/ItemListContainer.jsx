@@ -21,36 +21,36 @@ function ItemListContainer() {
     const [loading, setLoading] = useState(true)
     const {category} = useParams()
     useEffect(() => {
-        // const promise = new Promise((resolve) => {
-        //     setTimeout(() => resolve(products), 2000);
-        // });
-        // promise.then(res => {
-        //     setItems(res) 
-        //     setLoading(false)
-        // })
-        // .catch(err => console.log(err))
-        // if (category) {
-        //     promise.then(response => {
-        //         setItems(response.filter(item => category === item.category))
-        //     })
-        // } else {
-        //     promise.then((response) => { setItems(response) })
-        // }
-    // }, [category])
-        const dataBase = getFirestore()
-        const queryDataBase = dataBase.collection('products')
-        const conditionQuery = category ?
-            queryDataBase.where("category", "==", category)
-        :
-            queryDataBase
-        conditionQuery.get()
-        .then(data => {
-            if (data.size === 0) {
-                console.log('no hay nada')
-            }
-            setItems(data.docs.map(item => ({id: item.data().id, ...item.data()})))
+        const promise = new Promise((resolve) => {
+            setTimeout(() => resolve(products), 2000);
+        });
+        promise.then(res => {
+            setItems(res) 
+            setLoading(false)
         })
+        .catch(err => console.log(err))
+        if (category) {
+            promise.then(response => {
+                setItems(response.filter(item => category === item.category))
+            })
+        } else {
+            promise.then((response) => { setItems(response) })
+        }
     }, [category])
+    //     const dataBase = getFirestore()
+    //     const queryDataBase = dataBase.collection('products')
+    //     const conditionQuery = category ?
+    //         queryDataBase.where("category", "==", category)
+    //     :
+    //         queryDataBase
+    //     conditionQuery.get()
+    //     .then(data => {
+    //         if (data.size === 0) {
+    //             console.log('no hay nada')
+    //         }
+    //         setItems(data.docs.map(item => ({id: item.data().id, ...item.data()})))
+    //     })
+    // }, [category])
     return (
         <>
             {loading ? <main className="row"><div className="col-lg-12 col-xs-12 my-5 d-flex flex-row justify-content-center"><Spinner animation="border" /></div></main> :
