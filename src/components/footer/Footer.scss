@@ -1,0 +1,9 @@
+footer {
+    .pay {font-size: 2rem;}
+    @media only screen and (max-width: 768px) {
+        .pay {font-size: 1.5rem;}
+    }
+    @media only screen and (max-width: 360px) {
+        .pay {font-size: 1.5rem;}
+    }
+}

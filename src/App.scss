@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rubik:wght@400;700&display=swap');
+@import './components/header/Header.scss';
+@import './components/item-list/ItemList.scss';
+@import './components/footer/Footer.scss';
+$typography1: 'Playfair Display', serif;
+$typography2: 'Rubik', sans-serif;
+$black: black;
+$blue: #000080;
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+    .container-fluid {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+@for $i from 1 through 3 {
+    h#{$i}{
+        font-size: 44px - (8*$i);
+    }
+}
+@mixin styleText ($color, $font-family, $text-align) {
+    color: $color;
+    font-family: $font-family;
+    text-align: $text-align;
+}
+h1, h2, h3 {
+    @include styleText ($black, $typography1, center);
+    font-weight: 700;
+}
+h4 {
+    @include styleText ($black, $typography1, center);
+    margin: 0 0 0.5rem 0;
+    font-size: 20px;
+}
+p {
+    @include styleText ($black, $typography2, center);
+    margin: 0;
+    font-size: 16px;
+}
+span {
+    @include styleText ($black, $typography2, center);
+    margin: 0;
+    font-size: 14px;
+}
+li {
+    @include styleText ($black, $typography2, left);
+    margin: 0;
+    font-size: 16px;
+}
+button {
+    font-family: $typography2;
+    letter-spacing: 2px;
+}
+form {font-family: $typography2;}
+a {
+    text-decoration: none;
+    color: $black;
+}
+a:hover {
+    text-decoration: none;
+    color: $blue;
+}
+.instagram {font-size: 1.3rem;}
+.parallax--index {
+    background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631043651/parallax.jpg");
+    width: 100%;
+    height: 35rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.group-margin {margin: 0 5rem;}
+.img--us {
+    width: 100%;
+    height: auto;
+}
+@media only screen and (max-width: 1200px){
+    @for $i from 1 through 3 {
+        h#{$i}{
+            font-size: 44px - (6*$i);
+        }
+    }
+    p {font-size: 24px;}
+    span {font-size: 16px;}
+    .parallax--index {
+        background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631581813/parallax_1200.jpg");
+        height: 35rem;
+    }
+    .group-margin {margin: 0 3rem;}
+}
+@media only screen and (max-width: 768px) {
+    @for $i from 1 through 3 {
+        h#{$i}{
+            font-size: 36px - (5*$i);
+        }
+    }
+    p {font-size: 18px;}
+    span {font-size: 14px;}
+    button {font-size: 14px;}
+    form {font-size: 14px;}
+    .parallax--index {
+        background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631581457/parallax_768.jpg");
+        background-attachment: initial;
+        height: 25rem;
+    }
+    .group-margin {margin: 0 2rem;}
+}
+@media only screen and (max-width: 360px) {
+    @for $i from 1 through 3 {
+        h#{$i}{
+            font-size: 30px - (4*$i);
+        }
+    }
+    h4 {font-size: 18px;}
+    p {font-size: 14px;}
+    span {font-size: 12px;}
+    button {font-size: 14px;}
+    form {font-size: 14px;}
+    .parallax--index {
+        background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631583010/parallax_360.jpg");
+        background-attachment: initial;
+        height: 15rem;
+    }
+    .group-margin {margin: 0 1rem;}
+    /*iconos, nav*/
+}

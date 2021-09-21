@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rubik:wght@400;700&display=swap");
+.header { width: 100%; height: 5.5rem; margin: 0; padding: 0; }
+
+.header .jumbotron { background-color: rgba(0, 0, 0, 0.3); height: 1.5rem; width: 100%; padding: 0; margin: 0; }
+
+.header .list { font-size: 2rem; }
+
+.header .sidebar { width: 20%; }
+
+.header .search { width: 60%; }
+
+.header .search::-webkit-input-placeholder { color: black; }
+
+.header .search:-ms-input-placeholder { color: black; }
+
+.header .search::-ms-input-placeholder { color: black; }
+
+.header .search::placeholder { color: black; }
+
+.header .form-select { width: 75%; }
+
+.header .cart { font-size: 1.8rem; }
+
+.header .cartWidget { width: 40%; }
+
+@media only screen and (max-width: 1200px) { .header .sidebar { width: 45%; }
+  .header .form-select { width: 100%; }
+  .header .search { width: 85%; }
+  .header .cartWidget { width: 50%; } }
+
+@media only screen and (max-width: 768px) { .header .sidebar { width: 60%; }
+  .header .form-select { width: 45%; }
+  .header .search { width: 70%; }
+  .header .cartWidget { width: 100%; } }
+
+@media only screen and (max-width: 360px) { .header .sidebar { width: 70%; }
+  .header .form-select { width: 45%; }
+  .header .search { width: 73%; } }
+
+.card-container { position: relative; }
+
+.card-container .jumbotron-absolute { position: absolute; top: 2%; left: 2%; width: 45%; }
+
+.card-container .addButton { position: absolute; top: 85%; left: 45%; height: 2.2rem; width: 2.2rem; }
+
+.rounded-circle { border-radius: 50%; padding: 0; margin: 0; }
+
+.addModal { position: absolute; top: 22%; right: 0; bottom: 0; left: 0; width: 100%; opacity: 0; pointer-events: none; }
+
+.addModal-content { background-color: rgba(255, 255, 255, 0.9); }
+
+#addModal:target { opacity: 1; pointer-events: auto; }
+
+.countButton { height: 1.6rem; width: 1.6rem; }
+
+footer .pay { font-size: 2rem; }
+
+@media only screen and (max-width: 768px) { footer .pay { font-size: 1.5rem; } }
+
+@media only screen and (max-width: 360px) { footer .pay { font-size: 1.5rem; } }
+
+body { margin: 0; padding: 0; overflow-x: hidden; height: 100%; }
+
+body .container-fluid { width: 100%; margin: 0 auto; padding: 0; }
+
+h1 { font-size: 36px; }
+
+h2 { font-size: 28px; }
+
+h3 { font-size: 20px; }
+
+h1, h2, h3 { color: black; font-family: "Playfair Display", serif; text-align: center; font-weight: 700; }
+
+h4 { color: black; font-family: "Playfair Display", serif; text-align: center; margin: 0 0 0.5rem 0; font-size: 20px; }
+
+p { color: black; font-family: "Rubik", sans-serif; text-align: center; margin: 0; font-size: 16px; }
+
+span { color: black; font-family: "Rubik", sans-serif; text-align: center; margin: 0; font-size: 14px; }
+
+li { color: black; font-family: "Rubik", sans-serif; text-align: left; margin: 0; font-size: 16px; }
+
+button { font-family: "Rubik", sans-serif; letter-spacing: 2px; }
+
+form { font-family: "Rubik", sans-serif; }
+
+a { text-decoration: none; color: black; }
+
+a:hover { text-decoration: none; color: #000080; }
+
+.instagram { font-size: 1.3rem; }
+
+.parallax--index { background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631043651/parallax.jpg"); width: 100%; height: 35rem; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+
+.group-margin { margin: 0 5rem; }
+
+.img--us { width: 100%; height: auto; }
+
+@media only screen and (max-width: 1200px) { h1 { font-size: 38px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 26px; }
+  p { font-size: 24px; }
+  span { font-size: 16px; }
+  .parallax--index { background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631581813/parallax_1200.jpg"); height: 35rem; }
+  .group-margin { margin: 0 3rem; } }
+
+@media only screen and (max-width: 768px) { h1 { font-size: 31px; }
+  h2 { font-size: 26px; }
+  h3 { font-size: 21px; }
+  p { font-size: 18px; }
+  span { font-size: 14px; }
+  button { font-size: 14px; }
+  form { font-size: 14px; }
+  .parallax--index { background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631581457/parallax_768.jpg"); background-attachment: initial; height: 25rem; }
+  .group-margin { margin: 0 2rem; } }
+
+@media only screen and (max-width: 360px) { h1 { font-size: 26px; }
+  h2 { font-size: 22px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 18px; }
+  p { font-size: 14px; }
+  span { font-size: 12px; }
+  button { font-size: 14px; }
+  form { font-size: 14px; }
+  .parallax--index { background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631583010/parallax_360.jpg"); background-attachment: initial; height: 15rem; }
+  .group-margin { margin: 0 1rem; }
+  /*iconos, nav*/ }
+/*# sourceMappingURL=App.css.map */

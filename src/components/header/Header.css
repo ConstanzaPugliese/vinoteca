@@ -1,0 +1,38 @@
+.header { width: 100%; height: 5.5rem; margin: 0; padding: 0; }
+
+.header .jumbotron { background-color: rgba(0, 0, 0, 0.3); height: 1.5rem; width: 100%; padding: 0; margin: 0; }
+
+.header .list { font-size: 2rem; }
+
+.header .sidebar { width: 20%; }
+
+.header .search { width: 60%; }
+
+.header .search::-webkit-input-placeholder { color: black; }
+
+.header .search:-ms-input-placeholder { color: black; }
+
+.header .search::-ms-input-placeholder { color: black; }
+
+.header .search::placeholder { color: black; }
+
+.header .form-select { width: 75%; }
+
+.header .cart { font-size: 1.8rem; }
+
+.header .cartWidget { width: 40%; }
+
+@media only screen and (max-width: 1200px) { .header .sidebar { width: 45%; }
+  .header .form-select { width: 100%; }
+  .header .search { width: 85%; }
+  .header .cartWidget { width: 50%; } }
+
+@media only screen and (max-width: 768px) { .header .sidebar { width: 60%; }
+  .header .form-select { width: 45%; }
+  .header .search { width: 70%; }
+  .header .cartWidget { width: 100%; } }
+
+@media only screen and (max-width: 360px) { .header .sidebar { width: 70%; }
+  .header .form-select { width: 45%; }
+  .header .search { width: 73%; } }
+/*# sourceMappingURL=Header.css.map */

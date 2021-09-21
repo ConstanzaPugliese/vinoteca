@@ -1,0 +1,6 @@
+footer .pay { font-size: 2rem; }
+
+@media only screen and (max-width: 768px) { footer .pay { font-size: 1.5rem; } }
+
+@media only screen and (max-width: 360px) { footer .pay { font-size: 1.5rem; } }
+/*# sourceMappingURL=Footer.css.map */
