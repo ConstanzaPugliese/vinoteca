@@ -54,7 +54,7 @@ function Sidebar() {
                             <li className="mb-2"><Link to="/torrontes"><FaWineGlass className="me-2" />Torrontés</Link></li>
                             <li className="mb-2"><Link to="/chardonnay"><FaWineGlass className="me-2" />Chardonnay</Link></li>
                             <li className="mb-2"><Link to="/riesling"><FaWineGlass className="me-2" />Riesling</Link></li>
-                            <li><Link to="/category/sauvignon-blanc"><FaWineGlass className="me-2" />Sauvignon Blanc</Link></li>
+                            <li><Link to="/sauvignon-blanc"><FaWineGlass className="me-2" />Sauvignon Blanc</Link></li>
                         </ul>
                     </li>
                     <li className="mb-2"><Link to="/policies"><BsQuestionCircleFill className="me-2" />Políticas</Link></li>
@@ -65,4 +65,4 @@ function Sidebar() {
     )
 }
 
-export default Sidebar
+export default Sidebar;

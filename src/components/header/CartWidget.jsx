@@ -26,12 +26,12 @@ function CartWidget() {
                             <div className="row g-0">
                                 <section className="col-3">
                                     <Link to={`/products/${e.item.id}`}>
-                                        <img src={e.item.img} className="img-fluid" alt={e.item.name} />
+                                        <img src={e.item.img} className="img-fluid" alt={e.item.title} />
                                     </Link>
                                 </section>
                                 <section className="col-8">
                                     <Link to={`/products/${e.item.id}`}>
-                                        <h4>{e.item.name}</h4>
+                                        <h4>{e.item.title}</h4>
                                     </Link>
                                     <p><b>${e.item.price}</b></p>
                                     {/* <ItemCount stock={e.item.stock} initial={e.item.stock >= 1 ? 1 : 0} onAdd={onAdd} /> */}
