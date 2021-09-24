@@ -13,18 +13,10 @@ function ItemListContainer() {
         setLoading(true)
         const dataBase = getFirestore()
         const productsCollection = dataBase.collection('products')
-        const conditionQuery = category ?
-            productsCollection.where('category', '==', category)
-        :
-            productsCollection
-        conditionQuery.get().then(data => {
-            if (category && data.size > 0) {
-                setProducts(
-                    data.docs.map((doc) => {
-                        return {id: doc.id, ...doc.data()}
-                    })
-                )
-            } else if (data.size > 0) {
+        const conditionProducts = category ? productsCollection.where('category', '==', category) : productsCollection
+        conditionProducts.get()
+        .then((data) => {
+            if (data.size > 0) {
                 setProducts(
                     data.docs.map((doc) => {
                         return {id: doc.id, ...doc.data()}
@@ -39,7 +31,7 @@ function ItemListContainer() {
         <>
             {loading ? <main className="row"><div className="col-lg-12 col-xs-12 my-5 d-flex flex-row justify-content-center"><Spinner animation="border" /></div></main> :
             <main className="row mx-3">
-                <h1 className="col-lg-12 col-xs-12 my-5">{category ? `${category}` : 'Vinos'}</h1>
+                <h1 className="col-lg-12 col-xs-12 my-5 text-uppercase">{category ? `${category}` : 'Vinos'}</h1>
                 <ItemList products={products}/>
             </main>}
         </>

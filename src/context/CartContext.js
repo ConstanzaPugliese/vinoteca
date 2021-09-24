@@ -16,16 +16,6 @@ export const CartContextProvider = ({children}) => {
             setCart(modifiedCart);
         }
     };
-    // const addProductCart = (item, quantity) => {
-    //     const index = cart.findIndex(e => e.item.id === item.id)
-    //     if (index > -1) {
-    //         const oldQy = cart[index].quantity
-    //         cart.splice(index, 1)
-    //         setCart([...cart, { item, quantity: quantity + oldQy}])
-    //     } else {
-    //         setCart([...cart, {item, quantity}])
-    //     }
-    // }
     const iconCart = () => {
         return cart.reduce((acum, value) => acum + value.quantity, 0);
     }
