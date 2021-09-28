@@ -73,7 +73,6 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;
 }
-.group-margin {margin: 0 5rem;}
 .img--us {
     width: 100%;
     height: auto;
@@ -90,7 +89,6 @@ a:hover {
         background-image: url("https://res.cloudinary.com/connipugliese/image/upload/v1631581813/parallax_1200.jpg");
         height: 35rem;
     }
-    .group-margin {margin: 0 3rem;}
 }
 @media only screen and (max-width: 768px) {
     @for $i from 1 through 3 {
@@ -107,7 +105,6 @@ a:hover {
         background-attachment: initial;
         height: 25rem;
     }
-    .group-margin {margin: 0 2rem;}
 }
 @media only screen and (max-width: 360px) {
     @for $i from 1 through 3 {
@@ -125,6 +122,5 @@ a:hover {
         background-attachment: initial;
         height: 15rem;
     }
-    .group-margin {margin: 0 1rem;}
-    /*iconos, nav*/
+    /*iconos*/
 }

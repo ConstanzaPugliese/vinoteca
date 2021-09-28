@@ -1,3 +1,4 @@
+import './ItemList.css'
 import Item from './Item';
 
 function ItemList({products}) {

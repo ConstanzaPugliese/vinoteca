@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { getFirestore } from '../../service/Firebase';
 import {Link} from 'react-router-dom';
 import {BsSearch} from 'react-icons/bs';
 import {AiFillHome} from 'react-icons/ai';
@@ -8,6 +10,21 @@ import {BsQuestionCircleFill} from 'react-icons/bs';
 import {BsChatFill} from 'react-icons/bs';
 
 function Sidebar() {
+    const [categories, setCategories] = useState([])
+    useEffect(() => {
+        const dataBase = getFirestore()
+        const categoriesCollection = dataBase.collection('categories').get()
+        categoriesCollection.then((data) => {
+            if (data.size !== 0) {
+                setCategories(
+                    data.docs.map((doc) => {
+                        return {id: doc.id, ...doc.data()}
+                    })
+                )
+            }
+        })
+        .catch((err) => {console.log('Error buscando categorías', err)})
+    }, [])
     return (
         <div className="offcanvas offcanvas-start sidebar" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
             <div className="offcanvas-header">
@@ -46,15 +63,7 @@ function Sidebar() {
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li className="mb-2"><Link to="/products"><FaWineBottle className="me-2" />Todos los vinos</Link></li>
-                            <li className="mb-2"><Link to="/malbec"><FaWineGlass className="me-2" />Malbec</Link></li>
-                            <li className="mb-2"><Link to="/bonarda"><FaWineGlass className="me-2" />Bonarda</Link></li>
-                            <li className="mb-2"><Link to="/cabernet-sauvignon"><FaWineGlass className="me-2" />Cabernet Sauvignon</Link></li>
-                            <li className="mb-2"><Link to="/merlot"><FaWineGlass className="me-2" />Merlot</Link></li>
-                            <li className="mb-2"><Link to="/syrah"><FaWineGlass className="me-2" />Syrah</Link></li>
-                            <li className="mb-2"><Link to="/torrontes"><FaWineGlass className="me-2" />Torrontés</Link></li>
-                            <li className="mb-2"><Link to="/chardonnay"><FaWineGlass className="me-2" />Chardonnay</Link></li>
-                            <li className="mb-2"><Link to="/riesling"><FaWineGlass className="me-2" />Riesling</Link></li>
-                            <li><Link to="/sauvignon-blanc"><FaWineGlass className="me-2" />Sauvignon Blanc</Link></li>
+                            {categories.map((category) => <li className="mb-2"><Link to={`/${category.id}`}><FaWineGlass className="me-2" />{category.name}</Link></li> )}
                         </ul>
                     </li>
                     <li className="mb-2"><Link to="/policies"><BsQuestionCircleFill className="me-2" />Políticas</Link></li>

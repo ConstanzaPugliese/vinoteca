@@ -1,6 +1,6 @@
 # Vinoteca
 
-## Descripción*
+## Descripción
 
 Vinoteca es un sitio de comercio electrónico ficticio para la venta de distintos tipos de vinos.
 
@@ -18,12 +18,13 @@ Desarrollar una aplicación e-commerce funcional para el curso de ReactJS de Cod
 * Filtrar por categorías.
 * Hacer click en cualquiera de los productos para acceder a su información detallada y seleccionar una cantidad para agregar al carrito.
 * Si no hay stock del producto, no se podrá agregar al carrito.
-* Ver los productos en el carrito, sus cantidades seleccionadas, el precio total de los mismos y el valor de las cuotas.
-* Cambiar las cantidades, eliminar productos individualmente o vaciar el carrito.
-* Comprar productos iniciando la compra o agregar otros productos antes de iniciar.
+* Ver la cantidad total de productos en el ícono del carrito.
+* Ver cada producto y su cantidad, el precio total y las cuotas de la compra en el carrito.*
+* Cambiar la cantidad, eliminar productos individualmente o vaciar el carrito.*
+* Comprar o agregar otros productos antes de iniciar la compra.
 * Completar los datos del cliente y generar un número de orden.
-* El stock de productos se reducirá una vez terminada la compra.
-* Captar leads con el newsletter.
+* El stock de productos se reducirá una vez terminada la compra.*
+* Captar leads con el newsletter.*
 * Comunicarse por el formulario de contacto.
 
 ## Construido con*
@@ -40,7 +41,7 @@ Desarrollar una aplicación e-commerce funcional para el curso de ReactJS de Cod
 
 - Bootstrap: facilidad para asignar estilos y obtener un diseño responsive.
 
-- React Bootstrap: importé componentes Spinner.
+- React Bootstrap: importé componentes Spinner y Modal.
 
 - React Icons: importé íconos en general.
 

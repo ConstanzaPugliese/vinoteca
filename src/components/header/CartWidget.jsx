@@ -30,9 +30,11 @@ function CartWidget() {
                                     </Link>
                                 </section>
                                 <section className="col-8">
-                                    <Link to={`/products/${e.item.id}`}>
-                                        <h4>{e.item.title}</h4>
-                                    </Link>
+                                    <h4>
+                                        <Link to={`/products/${e.item.id}`}>
+                                            {e.item.title}
+                                        </Link>
+                                    </h4>
                                     <p><b>${e.item.price}</b></p>
                                     {/* <ItemCount stock={e.item.stock} initial={e.item.stock >= 1 ? 1 : 0} onAdd={onAdd} /> */}
                                 </section>
@@ -50,7 +52,7 @@ function CartWidget() {
                     </div>
                     <div className="text-center">
                         <Link to="/buy">
-                            <button className="btn btn-dark text-uppercase my-3" type="button">Iniciar compra</button>
+                            <button className="btn btn-dark text-uppercase my-3" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Iniciar compra</button>
                         </Link>
                         <br />
                         <span><Link to="/products">Ver más productos</Link></span>

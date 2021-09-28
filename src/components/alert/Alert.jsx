@@ -1,21 +1,25 @@
-import './Alert.css';
-import { Link } from "react-router-dom"
+import { useState } from 'react';
+import { Modal, ModalBody } from 'react-bootstrap';
 
 function Alert() {
+    const [showAlert, setShowAlert] = useState(true)
+    const [legal, setLegal] = useState(true)
+    const handleCloseAlert = () => {setShowAlert(false)}
+    const handleShow = () => {setLegal(false)}
     return (
-        <div class="d-flex flex-column justify-content-center align-items-center alertAge" id="alertAge">
-            <div className="bg-white d-flex flex-column justify-content-center align-items-center alertAge-content">
+        <Modal aria-labelledby="contained-modal-title-vcenter" centered show={showAlert}>
+            <ModalBody className="text-center">
                 <h1 className="text-uppercase mb-4">Vinoteca</h1>
                 <h3>¿Sos mayor de 18 años?</h3>
-                <div class="btn-group mb-4">
-                    <Link to="/">
-                        <button type="button" class="btn btn-success">Sí</button>
-                    </Link>
-                    <button type="button" class="btn btn-danger">No</button>
+                <div class="btn-group col-3">
+                    <button type="button" class="btn btn-success" onClick={handleCloseAlert}>Sí</button>
+                    <button type="button" class="btn btn-danger" onClick={handleShow}>No</button>
                 </div>
+                {legal ? <></> : <p className="mt-1">Sos menor de edad, no podés acceder al sitio.</p>}
+                <hr />
                 <span>Entrando al sitio estás aceptando los términos, condiciones y políticas de privacidad.</span>
-            </div>
-        </div>
+            </ModalBody>
+        </Modal>
     )
 }
 
