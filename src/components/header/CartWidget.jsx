@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 function CartWidget() {
     const { cart, removeItemCart, deleteCart, totalPriceCart, totalInstallmentCart } = useCartContext()
-    const productQuantity = cart.map((e) => e.quantity)
+    const productQuantity = cart.map((product) => product.quantity)
     const [count, setCount] = useState(productQuantity)
     const [buttonActive, setButtonActive] = useState([])
     return (
@@ -32,9 +32,9 @@ function CartWidget() {
                                         </Link>
                                     </h4>
                                     <p><b>${e.product.price}</b></p>
-                                    {/* <button type="button" className="btn btn-dark rounded-circle countButton" onClick={count > e.product.stock ? setButtonActive(false) : setCount(count + 1)} abled={buttonActive}>-</button>
+                                    <button type="button" className="btn btn-dark rounded-circle countButton" onClick={count > e.product.stock ? setButtonActive(false) : setCount(count + 1)} abled={buttonActive}>-</button>
                                     <span className="mx-2">{count}</span>
-                                    <button type="button" className="btn btn-dark rounded-circle countButton" onClick={count <= e.product.stock ? setButtonActive(false) : setCount(count - 1)} abled={buttonActive}>+</button> */}
+                                    <button type="button" className="btn btn-dark rounded-circle countButton" onClick={count <= e.product.stock ? setButtonActive(false) : setCount(count - 1)} abled={buttonActive}>+</button>
                                 </section>
                                 <section className="col-1">
                                     <button className="btn border-0 p-0" type="button" onClick={() => removeItemCart(e.item.id)}><BsTrash /></button>

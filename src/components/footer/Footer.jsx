@@ -55,9 +55,9 @@ function Footer() {
                 <FaCcVisa className="pay mx-2" />
                 <FaCcAmex className="pay mx-2" />
                 <FaCcDinersClub className="pay mx-2" />
-                <img src="https://res.cloudinary.com/connipugliese/image/upload/v1631140753/bank-transfer_miqxfl.png"alt="transferencia bancaria" width="30" height="30" className="mx-2" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/bank-transfer.png?alt=media&token=77a6de99-9b58-4ccc-ae7d-95bcd47a67ed"alt="transferencia bancaria" width="30" height="30" className="mx-2" />
                 <FaPaypal className="pay mx-2" />
-                <img src="https://res.cloudinary.com/connipugliese/image/upload/v1631140796/mercado-pago_bzdzuu.png" alt="Mercado Pago" width="30" height="30" className="mx-2" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/mercado-pago.png?alt=media&token=0a7ab912-aba0-4787-942b-bca4f238a517" alt="Mercado Pago" width="30" height="30" className="mx-2" />
             </section>
             <section className="col-lg-12 col-xs-12 mt-2 text-center">
                 <span>Defensa de lxs consumidorxs. Para reclamos <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" rel="noreferrer" target="_blank">ingresá acá</a></span>

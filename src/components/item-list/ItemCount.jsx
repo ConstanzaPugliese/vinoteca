@@ -6,8 +6,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial)
     const [buttonActive, setButtonActive] = useState([])
     const [loading, setLoading] = useState(false);
-    const [confirm, setConfirm]= useState(false)
-    const [cart, setCart]= useState(false)
+    const [confirm, setConfirm]= useState(false);
+    const [cart, setCart]= useState(false);
     const [noStock, setNoStock]= useState(false)
     const handlerClickAdd = () => {
         if (stock === 0) {
@@ -38,15 +38,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setLoading(true);
             setTimeout(() => {
                 setLoading(false)
-            }, 2000);
+            }, 1000);
             onAdd(count);
             setConfirm(true);
             setTimeout(() => {
                 setConfirm(false)
-            }, 3500);
+            }, 1500);
             setTimeout(() => {
                 setCart(true)
-            }, 3500);
+            }, 1500);
         }
     }
     return (
