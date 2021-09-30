@@ -11,9 +11,9 @@ function Alert() {
             <ModalBody className="text-center">
                 <h1 className="text-uppercase mb-4">Vinoteca</h1>
                 <h3>¿Sos mayor de 18 años?</h3>
-                <div class="btn-group col-3">
-                    <button type="button" class="btn btn-success" onClick={handleCloseAlert}>Sí</button>
-                    <button type="button" class="btn btn-danger" onClick={handleShow}>No</button>
+                <div className="btn-group col-3">
+                    <button type="button" className="btn btn-success" onClick={handleCloseAlert}>Sí</button>
+                    <button type="button" className="btn btn-danger" onClick={handleShow}>No</button>
                 </div>
                 {legal ? <></> : <p className="mt-1">Sos menor de edad, no podés acceder al sitio.</p>}
                 <hr />

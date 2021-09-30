@@ -1,17 +1,23 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import Spinner from 'react-bootstrap/Spinner';
+import Spinner from 'react-bootstrap/Spinner';
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count, setCount] = useState(initial)
     const [buttonActive, setButtonActive] = useState([])
-    const [changeButton, setChangeButton]= useState(false)
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
+    const [confirm, setConfirm]= useState(false)
+    const [cart, setCart]= useState(false)
+    const [noStock, setNoStock]= useState(false)
     const handlerClickAdd = () => {
         if (stock === 0) {
             setButtonActive(false);
         } else if (count > stock) {
             setButtonActive(false);
+            setNoStock(true)
+            setTimeout(() => {
+                setNoStock(false)
+            }, 4000);
         } else {
             setCount(count + 1)
         }
@@ -28,49 +34,46 @@ const ItemCount = ({stock, initial, onAdd}) => {
             // setCount(count);
         } else {
             setButtonActive(true);
-            onAdd(count);
             setCount(count);
-            // setLoading(true)
-            setChangeButton(true);
+            setLoading(true);
+            setTimeout(() => {
+                setLoading(false)
+            }, 2000);
+            onAdd(count);
+            setConfirm(true);
+            setTimeout(() => {
+                setConfirm(false)
+            }, 3500);
+            setTimeout(() => {
+                setCart(true)
+            }, 3500);
         }
     }
-    // useEffect(() => {
-    //     let getItem = new Promise((resolve, reject) => {
-    //         setTimeout(() => {
-    //             products ? resolve(products) : reject('error 404');
-    //         }, 2000);
-    //     });
-    //     getItem.then(answer => {
-    //         setProduct(answer[id -1])
-    //         setLoading(false)
-    //     })
-    // }, [id]);
     return (
         <div className="text-center">
-            <button type="button" className="btn btn-dark rounded-circle countButton" onClick={handlerClickSubtract} abled={buttonActive}>-</button>
-            <label className="mx-2"><span>{count}</span></label>
-            <button type="button" className="btn btn-dark rounded-circle countButton" onClick={handlerClickAdd} abled={buttonActive}>+</button>
+            <button type="button" className="btn btn-dark rounded-circle countButton" onClick={handlerClickSubtract} abled={buttonActive.toString()}>-</button>
+            <span className="mx-2">{count}</span>
+            <button type="button" className="btn btn-dark rounded-circle countButton" onClick={handlerClickAdd} abled={buttonActive.toString()}>+</button>
             <br />
-            {changeButton ?
-                <>
-                    {/* <button type="button" className="btn btn-dark my-2" disabled>
-                        <span className="mx-1">
-                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
-                        </span>
-                        <span className="mx-1">
-                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
-                        </span>
-                        <span className="mx-1">
-                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
-                        </span>
-                    </button> */}
-                    <button type="button" className="btn btn-dark text-uppercase my-2">Listo!</button>
-                    <p>Ya agregaste este producto. <a className="text-uppercase" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Ver carrito</a></p>
-                </>
+            {loading ?
+                <button type="button" className="btn btn-dark my-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <span className="mx-1">
+                        <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
+                    </span>
+                    <span className="mx-1">
+                        <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
+                    </span>
+                    <span className="mx-1">
+                        <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
+                    </span>
+                </button>
             :
-                <button type="button" className="btn btn-dark text-uppercase my-2" onClick={handlerClickOnAdd} abled={buttonActive}>Agregar al carrito</button>
-            }
-            {count > stock && <p>No tenemos esa cantidad disponible. <Link to="/products" className="text-uppercase">Ver más productos</Link></p>}
+                confirm ?
+                    <button type="button" className="btn btn-dark text-uppercase my-2">Listo!</button>
+                :
+                    <button type="button" className="btn btn-dark text-uppercase my-2" onClick={handlerClickOnAdd} abled={buttonActive.toString()}>Agregar al carrito</button>}
+            {cart && <p>Ya agregaste este producto. <a className="text-uppercase" href="null" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Ver carrito</a></p>}
+            {noStock && <p>No tenemos esa cantidad disponible. <Link to="/products" className="text-uppercase">Ver más productos</Link></p>}
             {stock === 0 && <p>No tenemos más stock. <Link to="/products" className="text-uppercase">Ver más productos</Link></p>}
         </div>
     )

@@ -17,7 +17,7 @@ function App() {
   return (
     <CartContextProvider>
       <BrowserRouter>
-        <body className="App container-fluid">
+        <div className="App container-fluid">
           <Alert />
           <Header />
           <Switch>
@@ -32,7 +32,7 @@ function App() {
             <Route exact path="/products/:id" component={ItemDetailContainer} />
           </Switch>
           <Footer />
-        </body>
+        </div>
       </BrowserRouter>
     </CartContextProvider>
   );

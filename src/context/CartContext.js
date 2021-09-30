@@ -6,13 +6,13 @@ export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState([])
-    const addProductCart = (item, quantity) => {
-        let prodIndex = cart.findIndex((e) => e.item.id === item.id);
-        if (prodIndex === -1) {
-            setCart((cart) => [...cart, { item: item, quantity: quantity }]);
+    const addProductCart = (product, quantity) => {
+        let productIndex = cart.findIndex((e) => e.product.id === product.id);
+        if (productIndex === -1) {
+            setCart((cart) => [...cart, { product: product, quantity: quantity }]);
         } else {
             let modifiedCart = [...cart];
-            modifiedCart[prodIndex].cant += quantity;
+            modifiedCart[productIndex].cant += quantity;
             setCart(modifiedCart);
         }
     };
@@ -20,12 +20,12 @@ export const CartContextProvider = ({children}) => {
         return cart.reduce((acum, value) => acum + value.quantity, 0);
     }
     const removeItemCart = (id) => {
-        const removeFilter = cart.filter(e => e.item.id !== id)
+        const removeFilter = cart.filter(e => e.product.id !== id)
         return setCart(removeFilter);
     }
     const deleteCart = () => setCart([])
     const totalPriceCart = () => {
-        return cart.reduce((acum, value) => (acum + (value.quantity * value.item.price)), 0);
+        return cart.reduce((acum, value) => (acum + (value.quantity * value.product.price)), 0);
     }
     const totalInstallmentCart = () => {
         const totalPrice = totalPriceCart() / 6;

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useCartContext } from '../context/CartContext';
 import Spinner from 'react-bootstrap/Spinner';
-// import { useParams } from 'react-router';
 import { getFirestore } from '../service/Firebase';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -10,7 +9,6 @@ import ModalHeader from 'react-bootstrap/esm/ModalHeader';
 import { Link } from 'react-router-dom';
 
 function Buy() {
-    // const { id } = useParams()
     const [order, setOrder] = useState(null)
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
@@ -19,6 +17,7 @@ function Buy() {
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(true)   
     const { cart, totalPriceCart, totalInstallmentCart, deleteCart } = useCartContext()
+    const dataBase = getFirestore()
     const saveName = (e) => {
         const input = e.target
         const value = input.value
@@ -56,28 +55,17 @@ function Buy() {
                 installment: totalInstallmentCart(),
                 date: firebase.firestore.Timestamp.fromDate(new Date()),
             }
-            const dataBase = getFirestore()
             const orders = dataBase.collection('orders')
             orders.add(orderData)
             .then((response) => {
-                setOrder(response.id)
-                //controlar si hay stock de los productos que quiero agregar
-                // dataBase.collection('products').doc(id)
-                // .update(
-                //     {stock: cart.product.stock - cart.quantity}
-                // )
-                // .then(response => {
-                //     console.log(`Su compra #${response.id} ha sido exitosa`)
-                // })
-                // .catch(err => {console.log('Error actualizando stock', err)})
-
                 // cart.map((product) => {
                 //     const decrement = product.quantity;
-                //     dataBase.collection('products').doc(product.id.toString())
-                //     .update(
-                //         {stock: firebase.firestore.FieldValue.increment(-decrement)}
+                //     const productsCollection = dataBase.collection("products");
+                //     productsCollection.doc(product.id).update(
+                //         {stock: product.stock - decrement}
                 //     );
                 // });
+                setOrder(response.id)
             })
             .catch(err => {console.log('Error creando orden de compra', err)})
             .finally(() => {
@@ -86,6 +74,9 @@ function Buy() {
             })
         }
     }
+    // const productsToUpdate = dataBase.collection('products')
+    //     .where(firebase.firestore.FieldPath.documentId(), 'in', products.map(product => product.id))
+
     const handleClose = () => {setShow(false)}
     const handleShow = () => {setShow(true)}
     const sendData = (e) => {e.preventDefault()}

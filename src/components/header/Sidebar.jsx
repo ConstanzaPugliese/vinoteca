@@ -58,12 +58,12 @@ function Sidebar() {
                     <li className="mb-2"><Link to="/"><AiFillHome className="me-2" />Inicio</Link></li>
                     <li className="mb-2"><Link to="/us"><RiTeamFill className=" me-2" />Nosotrxs</Link></li>
                     <li className="mb-2 dropdown">
-                        <a className="dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a className="dropdown-toggle" href="null" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <FaWineBottle className="me-2" />Productos
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li className="mb-2"><Link to="/products"><FaWineBottle className="me-2" />Todos los vinos</Link></li>
-                            {categories.map((category) => <li className="mb-2"><Link to={`/${category.id}`}><FaWineGlass className="me-2" />{category.name}</Link></li> )}
+                            {categories.map((category) => <li className="mb-2" key={category.id}><Link to={`/${category.id}`}><FaWineGlass className="me-2" />{category.name}</Link></li> )}
                         </ul>
                     </li>
                     <li className="mb-2"><Link to="/policies"><BsQuestionCircleFill className="me-2" />Políticas</Link></li>

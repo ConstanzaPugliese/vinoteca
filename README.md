@@ -4,7 +4,7 @@
 
 Vinoteca es un sitio de comercio electrónico ficticio para la venta de distintos tipos de vinos.
 
-## Deploy*
+## Prueba en vivo/Vista previa/Deploy*
 
 Visualiza el proyecto aquí
 
@@ -63,11 +63,11 @@ Desarrollar una aplicación e-commerce funcional para el curso de ReactJS de Cod
 
 ## Instrucciones de instalación y configuración
 
-Necesitas `git` y `node` instalados globalmente en tu máquina.
+Necesitas `Git` v2.31.1 y `Node.js` v14.17.5 instalados globalmente en tu máquina.
 
 1. Clona este repositorio con `git clone https://github.com/ConstanzaPugliese/vinoteca.git`
 
-2. Accede a la carpeta del ahora repositorio local con `cd vinoteca` e instala node_modules con `npm install`
+2. Accede a la carpeta del ahora repositorio local con `cd vinoteca` e instala las dependencias (node_modules) con `npm install`
 
 3. Inicializa la aplicación desde la terminal con `npm start`
 
