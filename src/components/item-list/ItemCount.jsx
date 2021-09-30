@@ -30,8 +30,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setButtonActive(false);
         } else if (count > stock) {
             setButtonActive(false);
-            // onAdd(count);
-            // setCount(count);
         } else {
             setButtonActive(true);
             setCount(count);
@@ -39,11 +37,11 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setTimeout(() => {
                 setLoading(false)
             }, 1000);
-            onAdd(count);
             setConfirm(true);
             setTimeout(() => {
                 setConfirm(false)
             }, 1500);
+            onAdd(count);
             setTimeout(() => {
                 setCart(true)
             }, 1500);

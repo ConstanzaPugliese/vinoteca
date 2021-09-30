@@ -5,7 +5,7 @@ import {BsList} from 'react-icons/bs';
 import {BsSearch} from 'react-icons/bs';
 import {IoCartOutline} from 'react-icons/io5';
 import Sidebar from './Sidebar';
-import CartWidget from './CartWidget';
+import Cart from './Cart';
 
 function Header() {
     const { iconCart } = useCartContext()
@@ -51,7 +51,7 @@ function Header() {
                     </button>
                 </nav>
                 <Sidebar />
-                <CartWidget />
+                <Cart />
             </header>
     )
 }

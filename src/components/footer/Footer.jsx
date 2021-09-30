@@ -60,6 +60,9 @@ function Footer() {
                 <img src="https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/mercado-pago.png?alt=media&token=0a7ab912-aba0-4787-942b-bca4f238a517" alt="Mercado Pago" width="30" height="30" className="mx-2" />
             </section>
             <section className="col-lg-12 col-xs-12 mt-2 text-center">
+                <span>Beber con moderación. Prohibida su venta a menores de 18 años. No compartir contenido con menores de 18 años.</span>
+            </section>
+            <section className="col-lg-12 col-xs-12 mt-2 text-center">
                 <span>Defensa de lxs consumidorxs. Para reclamos <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" rel="noreferrer" target="_blank">ingresá acá</a></span>
             </section>
             <address className="col-lg-12 col-xs-12 mt-4 text-center">
