@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Rubik:wght@400;700&display=swap');
 @import './components/header/Header.scss';
-@import './components/item-list/ItemList.scss';
+@import './components/item-list/Item.scss';
 @import './components/footer/Footer.scss';
 $typography1: 'Playfair Display', serif;
 $typography2: 'Rubik', sans-serif;
@@ -17,35 +17,40 @@ body {
         padding: 0;
     }
 }
-@for $i from 1 through 3 {
-    h#{$i}{
-        font-size: 44px - (8*$i);
-    }
-}
 @mixin styleText ($color, $font-family, $text-align) {
     color: $color;
     font-family: $font-family;
     text-align: $text-align;
 }
-h1, h2, h3 {
+h1 {
     @include styleText ($black, $typography1, center);
     font-weight: 700;
+    font-size: 44px;
+}
+h2 {
+    @include styleText ($black, $typography1, center);
+    font-weight: 700;
+    font-size: 44px;
+}
+h3 {
+    @include styleText ($black, $typography1, center);
+    font-weight: 700;
+    font-size: 36px;
 }
 h4 {
     @include styleText ($black, $typography1, center);
+    font-size: 26px;
+}
+h5 {
+    @include styleText ($black, $typography2, center);
     margin: 0 0 0.5rem 0;
     font-size: 20px;
 }
 p {
     @include styleText ($black, $typography2, center);
-    margin: 0;
     font-size: 16px;
 }
-span {
-    @include styleText ($black, $typography2, center);
-    margin: 0;
-    font-size: 14px;
-}
+span {font-family: $typography2;}
 li {
     @include styleText ($black, $typography2, left);
     margin: 0;
@@ -78,25 +83,24 @@ a:hover {
     height: auto;
 }
 @media only screen and (max-width: 1200px){
-    @for $i from 1 through 3 {
-        h#{$i}{
-            font-size: 44px - (6*$i);
-        }
-    }
+    h1 {font-size: 44px;}
+    h2 {font-size: 44px;}
+    h3 {font-size: 38px;}
+    h4 {font-size: 32px;}
+    h5 {font-size: 26px;}
     p {font-size: 24px;}
-    span {font-size: 16px;}
     .parallax--index {
         background-image: url("https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/parallax_1200.jpg?alt=media&token=eb9380a1-d1db-447b-9464-c928549de3c4");
         height: 35rem;
     }
 }
 @media only screen and (max-width: 768px) {
-    @for $i from 1 through 3 {
-        h#{$i}{
-            font-size: 36px - (5*$i);
-        }
-    }
-    p {font-size: 18px;}
+    h1 {font-size: 36px;}
+    h2 {font-size: 36px;}
+    h3 {font-size: 31px;}
+    h4 {font-size: 26px;}
+    h5 {font-size: 21px;}
+    p {font-size: 14px;}
     span {font-size: 14px;}
     button {font-size: 14px;}
     form {font-size: 14px;}
@@ -107,12 +111,11 @@ a:hover {
     }
 }
 @media only screen and (max-width: 360px) {
-    @for $i from 1 through 3 {
-        h#{$i}{
-            font-size: 30px - (4*$i);
-        }
-    }
-    h4 {font-size: 18px;}
+    h1 {font-size: 30px;}
+    h2 {font-size: 30px;}
+    h3 {font-size: 26px;}
+    h4 {font-size: 22px;}
+    h5 {font-size: 18px;}
     p {font-size: 14px;}
     span {font-size: 12px;}
     button {font-size: 14px;}
@@ -122,5 +125,4 @@ a:hover {
         background-attachment: initial;
         height: 15rem;
     }
-    /*iconos*/
 }

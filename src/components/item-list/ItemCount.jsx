@@ -32,7 +32,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setButtonActive(false);
         } else {
             setButtonActive(true);
-            setCount(count);
             setLoading(true);
             setTimeout(() => {
                 setLoading(false)
@@ -41,10 +40,11 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setTimeout(() => {
                 setConfirm(false)
             }, 1500);
-            onAdd(count);
             setTimeout(() => {
                 setCart(true)
             }, 1500);
+            setCount(initial);
+            onAdd(count);
         }
     }
     return (
@@ -54,25 +54,34 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <button type="button" className="btn btn-dark rounded-circle countButton" onClick={handlerClickAdd} abled={buttonActive.toString()}>+</button>
             <br />
             {loading ?
-                <button type="button" className="btn btn-dark my-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <span className="mx-1">
-                        <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
-                    </span>
-                    <span className="mx-1">
-                        <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
-                    </span>
-                    <span className="mx-1">
-                        <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
-                    </span>
-                </button>
+                <>
+                    <button type="button" className="btn btn-dark my-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <span className="mx-1">
+                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
+                        </span>
+                        <span className="mx-1">
+                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
+                        </span>
+                        <span className="mx-1">
+                            <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" variant="light"/>
+                        </span>
+                    </button>
+                    <br />
+                </>
             :
                 confirm ?
-                    <button type="button" className="btn btn-dark text-uppercase my-2">Listo!</button>
+                    <>
+                        <button type="button" className="btn btn-dark text-uppercase my-2">Listo!</button>
+                        <br />
+                    </>
                 :
-                    <button type="button" className="btn btn-dark text-uppercase my-2" onClick={handlerClickOnAdd} abled={buttonActive.toString()}>Agregar al carrito</button>}
-            {cart && <p>Ya agregaste este producto. <a className="text-uppercase" href="null" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Ver carrito</a></p>}
-            {noStock && <p>No tenemos esa cantidad disponible. <Link to="/products" className="text-uppercase">Ver más productos</Link></p>}
-            {stock === 0 && <p>No tenemos más stock. <Link to="/products" className="text-uppercase">Ver más productos</Link></p>}
+                    <>
+                        <button type="button" className="btn btn-dark text-uppercase my-2" onClick={handlerClickOnAdd} abled={buttonActive.toString()}>Agregar al carrito</button>
+                        <br/>
+                    </>}
+            {cart && <span>Ya agregaste este producto. <a className="text-uppercase" href="null" role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Ver carrito</a></span>}
+            {noStock && <span>No tenemos esa cantidad disponible. <Link to="/products" className="text-uppercase">Ver más productos</Link></span>}
+            {stock === 0 && <span>No tenemos más stock. <Link to="/products" className="text-uppercase">Ver más productos</Link></span>}
         </div>
     )
 }

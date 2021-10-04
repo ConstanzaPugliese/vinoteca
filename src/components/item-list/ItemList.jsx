@@ -1,4 +1,4 @@
-import './ItemList.css'
+import './Item.css'
 import Item from './Item';
 
 function ItemList({products}) {

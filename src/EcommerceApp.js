@@ -4,13 +4,13 @@ import { CartContextProvider } from './context/CartContext';
 import Alert from './components/alert/Alert'
 import Header from './components/header/Header';
 import Search from './pages/Search';
-import Home from './pages/Home';
+import Home from './containers/Home';
 import Us from './pages/Us';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
-import Buy from './pages/Buy';
+import Buy from './containers/Buy';
 import Policies from './pages/Policies';
-import Contact from './pages/Contact';
+import Contact from './containers/Contact';
 import Footer from './components/footer/Footer';
 
 function App() {

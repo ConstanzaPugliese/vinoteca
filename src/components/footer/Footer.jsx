@@ -38,15 +38,15 @@ function Footer() {
             <section className="col-lg-12 col-xs-12 text-center">
                 <div className="mb-2">
                     <FaWhatsapp className="me-2" />
-                    <p className="d-inline-flex"><a href="https://wa.me/5491155715380" rel="noreferrer" target="_blank">+54 9 11 4980 5322</a></p>
+                    <h5 className="d-inline-flex"><a href="https://wa.me/5491155715380" rel="noreferrer" target="_blank">+54 9 11 4980 5322</a></h5>
                 </div>
                 <div className="mb-2">
                     <BsEnvelope className="me-2" />
-                    <p className="d-inline-flex"><a href="mailto:vinoteca@gmail.com" rel="noreferrer" target="_blank">vinoteca@gmail.com</a></p>
+                    <h5 className="d-inline-flex"><a href="mailto:vinoteca@gmail.com" rel="noreferrer" target="_blank">vinoteca@gmail.com</a></h5>
                 </div>
                 <div>
                     <BiMap className="me-2" />
-                    <p className="d-inline-flex"><a href="https://goo.gl/maps/NHUhzaatQ6Nc1j7d7" rel="noreferrer" target="_blank">Hurlingham (GBA)</a></p>
+                    <h5 className="d-inline-flex"><a href="https://goo.gl/maps/NHUhzaatQ6Nc1j7d7" rel="noreferrer" target="_blank">Hurlingham (GBA)</a></h5>
                 </div>
             </section>
             <section className="col-lg-12 col-xs-12 mt-4 text-center">
@@ -60,13 +60,13 @@ function Footer() {
                 <img src="https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/mercado-pago.png?alt=media&token=0a7ab912-aba0-4787-942b-bca4f238a517" alt="Mercado Pago" width="30" height="30" className="mx-2" />
             </section>
             <section className="col-lg-12 col-xs-12 mt-2 text-center">
-                <span>Beber con moderación. Prohibida su venta a menores de 18 años. No compartir contenido con menores de 18 años.</span>
+                <p>Beber con moderación. Prohibida su venta a menores de 18 años. No compartir contenido con menores de 18 años.</p>
             </section>
-            <section className="col-lg-12 col-xs-12 mt-2 text-center">
-                <span>Defensa de lxs consumidorxs. Para reclamos <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" rel="noreferrer" target="_blank">ingresá acá</a></span>
+            <section className="col-lg-12 col-xs-12 text-center">
+                <p>Defensa de lxs consumidorxs. Para reclamos <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" rel="noreferrer" target="_blank">ingresá acá</a></p>
             </section>
-            <address className="col-lg-12 col-xs-12 mt-4 text-center">
-                <span>Todos los derechos reservados <a href="https://github.com/ConstanzaPugliese" rel="noreferrer" target="_blank">Constanza Pugliese</a>©2021</span>
+            <address className="col-lg-12 col-xs-12 text-center">
+                <p>Todos los derechos reservados <a href="https://github.com/ConstanzaPugliese" rel="noreferrer" target="_blank">Constanza Pugliese</a>©2021</p>
             </address>
         </footer>
     )

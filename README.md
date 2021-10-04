@@ -24,30 +24,32 @@ Desarrollar una aplicación e-commerce funcional para el curso de ReactJS de Cod
 * Comprar o agregar otros productos antes de iniciar la compra.
 * Completar los datos del cliente y generar un número de orden.
 * El stock de productos se reducirá una vez terminada la compra.*
-* Captar leads con el newsletter.*
+* Captar leads con el newsletter.
 * Comunicarse por el formulario de contacto.
 
-## Construido con*
+## Construido con
 
-- ReactJS
+- [ReactJS](https://es.reactjs.org/)
 
 - JSX/JavaScript y HTML
 
-- Sass/CSS
+- [Sass](https://sass-lang.com/)/CSS
 
 - Firebase
 
-## Librerías*
+## Librerías
 
-- Bootstrap: facilidad para asignar estilos y obtener un diseño responsive.
+- [Bootstrap](https://getbootstrap.com/): facilidad para asignar estilos y obtener un diseño responsive.
 
-- React Bootstrap: importé componentes Spinner y Modal.
+- [React Bootstrap](https://react-bootstrap.github.io/): importé componentes Spinner y Modal.
 
-- React Icons: importé íconos en general.
+- [React Icons](https://react-icons.github.io/react-icons/): importé íconos en general.
 
-- React Router DOM: enrutado de la aplicación.
+- [AOS](https://michalsnik.github.io/aos/): facilidad para utilizar animaciones.
 
-- Firebase (y firestore): servicios y base de datos desde donde puedo trabajar con la información de los productos y generar órdenes de compra.
+- [React Router DOM](https://reactrouter.com/web/guides/quick-start): enrutado de la aplicación.
+
+- [Firebase (y firestore)](https://firebase.google.com/): servicios y base de datos desde donde puedo trabajar con la información de los productos y generar órdenes de compra.
 
 ## Dependencias
     "bootstrap": "^5.1.0",
@@ -57,15 +59,15 @@ Desarrollar una aplicación e-commerce funcional para el curso de ReactJS de Cod
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.3.0",
 
-## Versionado*
+## Versionado
 
-- GitHub
+- [GitHub](https://github.com/)
 
 ## Instrucciones de instalación y configuración
 
-Necesitas `Git` v2.31.1 y `Node.js` v14.17.5 instalados globalmente en tu máquina.
+Necesitas [Git](https://git-scm.com/) v2.31.1 y [Node.js](https://nodejs.org/es/) v14.17.5 instalados globalmente en tu máquina.
 
-1. Clona este repositorio con `git clone https://github.com/ConstanzaPugliese/vinoteca.git`
+1. Clona este repositorio con `git clone https://github.com/constanzapugliese/vinoteca.git`
 
 2. Accede a la carpeta del ahora repositorio local con `cd vinoteca` e instala las dependencias (node_modules) con `npm install`
 
@@ -73,8 +75,6 @@ Necesitas `Git` v2.31.1 y `Node.js` v14.17.5 instalados globalmente en tu máqui
 
 4. La aplicación debería ejecutarse en el navegador, pero también se puede visitar en http://localhost:3000
 
-## Autora*
+## Autora
 
-Desarrollado por Constanza Pugliese
-
-- LinkedIn: https://www.linkedin.com/in/constanza-pugliese-aa90a084/
+Desarrollado por [Constanza Pugliese](https://www.linkedin.com/in/constanzapugliese/)

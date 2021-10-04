@@ -4,15 +4,15 @@ import {Link} from 'react-router-dom';
 import {BsList} from 'react-icons/bs';
 import {BsSearch} from 'react-icons/bs';
 import {IoCartOutline} from 'react-icons/io5';
-import Sidebar from './Sidebar';
-import Cart from './Cart';
+import Sidebar from '../../containers/Sidebar';
+import Cart from '../../containers/Cart';
 
 function Header() {
     const { iconCart } = useCartContext()
     return (
             <header className="row header">
-                <div className="col-lg-12 col-xs-12 jumbotron d-flex flex-row justify-content-center align-items-center">
-                    <span className="text-white" data-aos="zoom-in">Envíos a todo el mundo o retirá gratis por nuestro local</span>
+                <div className="col-lg-12 col-xs-12 jumbotron jumbotron-fluid d-flex flex-row justify-content-center align-items-center">
+                    <span className="text-white">Envíos a todo el mundo o retirá gratis por nuestro local</span>
                 </div>
                 <nav className="navbar bg-white my-1">
                     <button className="col-lg-1 col-xs-1 btn border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -27,21 +27,7 @@ function Header() {
                         </form>
                     </div>
                     <div className="col-lg-7 col-xs-10 text-center">
-                        <h2 className="text-uppercase"><Link to='/'>Vinoteca</Link></h2>
-                    </div>
-                    <div className="col-lg-1 d-none d-lg-block">
-                        <select className="form-select bg-transparent border-dark" aria-label="Default select example">
-                            <option value="ARG" defaultValue>ARG</option>
-                            <option value="AU">AU</option>
-                            <option value="BR">BR</option>
-                            <option value="CL">CL</option>
-                            <option value="ES">ES</option>
-                            <option value="GB">GB</option>
-                            <option value="MX">MX</option>
-                            <option value="PY">PY</option>
-                            <option value="US">US</option>
-                            <option value="UY">UY</option>
-                        </select>
+                        <h4 className="text-uppercase"><b><Link to='/'>Vinoteca</Link></b></h4>
                     </div>
                     <button className="col-lg-1 col-xs-1 btn border-0 p-0 position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <IoCartOutline className="cart"/>
