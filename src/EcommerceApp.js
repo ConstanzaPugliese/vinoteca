@@ -8,7 +8,7 @@ import Home from './containers/home/Home';
 import Us from './pages/us/Us';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
-import Buy from './containers/buy/Buy';
+import Buy from './containers/Buy/Buy';
 import Policies from './pages/policies/Policies';
 import Contact from './containers/contact/Contact';
 import Footer from './components/footer/Footer';
