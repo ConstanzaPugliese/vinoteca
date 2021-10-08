@@ -6,6 +6,21 @@ export const useCartContext = () => useContext(CartContext)
 
 export const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState([])
+    const installment = (product) => {
+        const price = product.price / 6;
+        return price.toFixed(2);
+    }
+    const priceWithDiscount = (product) => {
+        const discount = (product.discount * product.price) / 100
+        const finalPrice = product.price - discount
+        return finalPrice
+    }
+    const installmentWithDiscount = (product) => {
+        const discount = (product.discount * product.price) / 100
+        const finalPrice = product.price - discount
+        const finalInstallment = finalPrice / 6;
+        return finalInstallment.toFixed(2);
+    }
     const addProductCart = (product, quantity) => {
         if (isInCart(product.id)) {
             const updateCart = [...cart];
@@ -30,17 +45,6 @@ export const CartContextProvider = ({children}) => {
         return setCart(removeFilter);
     }
     const deleteCart = () => setCart([])
-    const priceWithDiscount = (product) => {
-        const discount = (product.discount * product.price) / 100
-        const finalPrice = product.price - discount
-        return finalPrice
-    }
-    const installmentWithDiscount = (product) => {
-        const discount = (product.discount * product.price) / 100
-        const finalPrice = product.price - discount
-        const finalInstallment = finalPrice / 6;
-        return finalInstallment.toFixed(2);
-    }
     const totalPriceCart = () => {
         return cart.reduce((acum, value) => (acum + (value.quantity * value.product.price)), 0);
     }
@@ -49,7 +53,7 @@ export const CartContextProvider = ({children}) => {
         return totalPrice.toFixed(2);
     }
     return (
-        <CartContext.Provider value={{cart, addProductCart, iconCart, removeItemCart, deleteCart, priceWithDiscount, installmentWithDiscount, totalPriceCart, totalInstallmentCart}}>
+        <CartContext.Provider value={{installment, priceWithDiscount, installmentWithDiscount, addProductCart, cart, iconCart, removeItemCart, deleteCart, totalPriceCart, totalInstallmentCart}}>
             {children}
         </CartContext.Provider>
     )

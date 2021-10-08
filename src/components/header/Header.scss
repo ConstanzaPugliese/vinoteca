@@ -15,24 +15,20 @@ $black: black;
     .sidebar {width: 20%;}
     .search {width: 60%;}
     .search::placeholder {color: $black;}
-    .form-select {width: 75%;}
-    .cart {font-size: 1.8rem;}
-    .cartWidget {width: 40%;}
+    .cartWidget {font-size: 1.8rem;}
+    .cart {width: 40%;}
     @media only screen and (max-width: 1200px){
         .sidebar {width: 45%;}
-        .form-select {width: 100%;}
         .search {width: 85%;}
-        .cartWidget {width: 50%;}
+        .cart {width: 50%;}
     }
     @media only screen and (max-width: 768px) {
         .sidebar {width: 60%;}
-        .form-select {width: 45%;}
         .search {width: 70%;}
-        .cartWidget {width: 100%;}
+        .cart {width: 100%;}
     }
     @media only screen and (max-width: 360px) {
         .sidebar {width: 70%;}
-        .form-select {width: 45%;}
         .search {width: 73%;}
     }
 }

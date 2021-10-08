@@ -3,14 +3,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { CartContextProvider } from './context/CartContext';
 import Alert from './components/alert/Alert'
 import Header from './components/header/Header';
-import Search from './pages/Search';
-import Home from './containers/Home';
-import Us from './pages/Us';
-import ItemListContainer from './containers/ItemListContainer';
-import ItemDetailContainer from './containers/ItemDetailContainer';
-import Buy from './containers/Buy';
-import Policies from './pages/Policies';
-import Contact from './containers/Contact';
+import Search from './pages/search/Search';
+import Home from './containers/home/Home';
+import Us from './pages/us/Us';
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import Buy from './containers/buy/Buy';
+import Policies from './pages/policies/Policies';
+import Contact from './containers/contact/Contact';
 import Footer from './components/footer/Footer';
 
 function App() {

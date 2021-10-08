@@ -16,23 +16,18 @@
 
 .header .search::placeholder { color: black; }
 
-.header .form-select { width: 75%; }
+.header .cartWidget { font-size: 1.8rem; }
 
-.header .cart { font-size: 1.8rem; }
-
-.header .cartWidget { width: 40%; }
+.header .cart { width: 40%; }
 
 @media only screen and (max-width: 1200px) { .header .sidebar { width: 45%; }
-  .header .form-select { width: 100%; }
   .header .search { width: 85%; }
-  .header .cartWidget { width: 50%; } }
+  .header .cart { width: 50%; } }
 
 @media only screen and (max-width: 768px) { .header .sidebar { width: 60%; }
-  .header .form-select { width: 45%; }
   .header .search { width: 70%; }
-  .header .cartWidget { width: 100%; } }
+  .header .cart { width: 100%; } }
 
 @media only screen and (max-width: 360px) { .header .sidebar { width: 70%; }
-  .header .form-select { width: 45%; }
   .header .search { width: 73%; } }
 /*# sourceMappingURL=Header.css.map */

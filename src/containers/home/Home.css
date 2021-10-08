@@ -1,0 +1,10 @@
+.instagram { font-size: 1.3rem; }
+
+.parallax--index { background-image: url("https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/parallax.jpg?alt=media&token=2f7387e4-9a9f-4828-9ff9-2a1ed44b3295"); width: 100%; height: 35rem; background-attachment: fixed; background-position: center; background-repeat: no-repeat; }
+
+@media only screen and (max-width: 1200px) { .parallax--index { background-image: url("https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/parallax_1200.jpg?alt=media&token=eb9380a1-d1db-447b-9464-c928549de3c4"); height: 35rem; } }
+
+@media only screen and (max-width: 768px) { .parallax--index { background-image: url("https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/parallax_768.jpg?alt=media&token=f011132b-198b-4e7d-9fa2-5b183534f484"); background-attachment: initial; height: 25rem; } }
+
+@media only screen and (max-width: 360px) { .parallax--index { background-image: url("https://firebasestorage.googleapis.com/v0/b/vinoteca-2170e.appspot.com/o/parallax_360.jpg?alt=media&token=a958cd6f-d227-4da1-9ec9-dd9141844ff7"); background-attachment: initial; height: 15rem; } }
+/*# sourceMappingURL=Home.css.map */
